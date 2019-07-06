@@ -60,8 +60,10 @@
 
     <Button
         android:id="@+id/btnTimer"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/btn_round"
         android:text="Select Time" />
 
     <LinearLayout
@@ -81,7 +83,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Delete" />
+            android:text="Delete"
+            />
     </LinearLayout>
 
     <Button
