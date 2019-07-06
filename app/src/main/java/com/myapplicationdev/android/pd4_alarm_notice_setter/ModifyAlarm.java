@@ -21,7 +21,7 @@ import java.util.Calendar;
 
 public class ModifyAlarm extends AppCompatActivity implements TimePickerDialog.OnTimeSetListener{
 
-    EditText etID, etTitle, etDesc;
+    EditText /*etID,*/ etTitle, etDesc;
     Button btnUpdate, btnDelete, btnCancel, btnTimer;
     TextView tvTimeShow;
     Calendar calendar;
@@ -36,7 +36,7 @@ public class ModifyAlarm extends AppCompatActivity implements TimePickerDialog.O
         setContentView(R.layout.activity_modify_alarm);
 
 
-        etID = findViewById(R.id.etID);
+      /*  etID = findViewById(R.id.etID);*/
         etTitle = findViewById(R.id.etTitle);
         etDesc = findViewById(R.id.etDesc);
         btnTimer = findViewById(R.id.btnTimer);
@@ -49,8 +49,8 @@ public class ModifyAlarm extends AppCompatActivity implements TimePickerDialog.O
         Intent intentReceived = getIntent();
         final Task task = (Task) intentReceived.getSerializableExtra("alarm");
 
-        etID.setEnabled(false);
-        etID.setText(task.getId() + "");
+     /*   etID.setEnabled(false);
+        etID.setText(task.getId() + "");*/
         etTitle.setText(task.getTask());
         etDesc.setText(task.getDescription());
 
