@@ -20,5 +20,6 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="0.1"
-        android:text="Add Alarm" />
+        android:text="Add Alarm"
+        android:background="@drawable/btn_round"/>
 </LinearLayout>
