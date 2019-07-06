@@ -28,7 +28,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String createTableSql = "CREATE TABLE " + TABLE_TASK + "("
                 + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + TASK_NAME + " TEXT,"
+                + TASK_NAME + " TEXT NOT NULL,"
                 + DESCRIPTION + " TEXT, "
                 + DATE + "TEXT )";
         db.execSQL(createTableSql);
@@ -51,7 +51,25 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_TASK);
         onCreate(db);
     }
-
+    public int updateTask(Task data){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(TASK_NAME, data.getTask());
+        values.put(DESCRIPTION, data.getDescription());
+        String condition = COLUMN_ID + "= ?";
+        String[] args = {String.valueOf(data.getId())};
+        int result = db.update(TABLE_TASK, values, condition, args);
+        db.close();
+        return result;
+    }
+    public int deleteTask(int id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String condition = COLUMN_ID + "= ?";
+        String[] args = {String.valueOf(id)};
+        int result = db.delete(TABLE_TASK, condition, args);
+        db.close();
+        return result;
+    }
     // Insert Data
     public void insertTask(String task, String description){
 

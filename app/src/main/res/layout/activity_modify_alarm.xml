@@ -9,12 +9,11 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Name"
-        android:textColor="@android:color/background_dark"
+        android:text="ID"
         android:textSize="18sp" />
 
     <EditText
-        android:id="@+id/editTextName"
+        android:id="@+id/etID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -24,33 +23,43 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Description"
-        android:textColor="@android:color/background_dark"
+        android:text="Title"
         android:textSize="18sp" />
 
     <EditText
-        android:id="@+id/editTextDesc"
+        android:id="@+id/etTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="What time?"
-        android:textColor="#000000"
-        android:textSize="24sp" />
+        android:text="Description"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/etDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
 
     <TextView
-        android:id="@+id/tvTime"
+        android:id="@+id/tvTime2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Time :" />
 
+    <TextView
+        android:id="@+id/tvTimeshow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <Button
-        android:id="@+id/btnTime"
+        android:id="@+id/btnTimer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Select Time" />
@@ -61,16 +70,24 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/buttonAdd"
+            android:id="@+id/btnUpdate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add task" />
+            android:layout_weight="1"
+            android:text="Update" />
 
         <Button
-            android:id="@+id/buttonCancel"
+            android:id="@+id/btnDelete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@android:string/cancel" />
+            android:layout_weight="1"
+            android:text="Delete" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@android:string/cancel" />
 
 </LinearLayout>

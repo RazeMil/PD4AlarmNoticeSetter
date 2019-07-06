@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -38,6 +39,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, 9);
             }
         });
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                Intent intent = new Intent(getBaseContext(), ModifyAlarm.class);
+                Task currentAlarm = tasks.get(position);
+                intent.putExtra("alarm", currentAlarm);
+                startActivityForResult(intent, 9);
+            }
+        });
+
     }
 
     @Override

@@ -17,6 +17,10 @@ public class Task implements Serializable {
     public int getId() {
         return id;
     }
+    public void setId(int id) {
+        this.id = id;
+    }
+
 
     public String getTask() {
         return task;
@@ -28,6 +32,6 @@ public class Task implements Serializable {
 
     @Override
     public String toString() {
-        return id + " " + task + "\n" + description;
+        return id + ":"+" " + task + "\n" + description;
     }
 }
